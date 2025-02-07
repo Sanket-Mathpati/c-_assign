@@ -1,0 +1,39 @@
+1.) #include <iostream>
+    using namespace std;
+    
+    int main() {
+        cout << "Physics" << endl;
+        cout << "Wallah";
+        return 0;
+    }
+
+2.)#include <iostream>
+    using namespace std;
+    
+    int main() {
+        cout << 5 + 5;
+        return 0;
+    }
+
+3.)int	4 bytes
+  bool	1 byte
+  float	4 bytes
+
+4.) 6 4
+
+5.)#include <iostream>
+    using namespace std;
+    
+    int main() {
+        double radius = 10;
+        double circumference = 2 * 3.14159 * radius;
+        cout << "Circumference: " << circumference;
+        return 0;
+    }
+
+6.)01Pwskills	=	Cannot start with a number
+  _FLOAT	=	Starts with _, which is allowed
+  int	=	Reserved keyword in C++
+  FLOAT	=	C++ is case-sensitive, FLOAT is different from float
+  You will succeed	=	Contains spaces, which are not allowed
+
