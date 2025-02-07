@@ -1,0 +1,127 @@
+1.)#include <iostream>
+  using namespace std;
+  int main() {
+      int a, b;
+      cout << "Enter two numbers: ";
+      cin >> a >> b;
+      if (a > b)
+          cout << "First number " << a << " is the largest.";
+      else
+          cout << "Second number " << b << " is the largest.";
+      return 0;
+  }
+2.)#include <iostream>
+  using namespace std;
+  int main() {
+      double radius;
+      cout << "Enter the radius: ";
+      cin >> radius;
+      double area = 3.14159 * radius * radius;
+      double circumference = 2 * 3.14159 * radius;
+      if (area > circumference)
+          cout << "Area is greater than circumference.";
+      else
+          cout << "Circumference is greater than area.";
+      return 0;
+  }
+3.)#include <iostream>
+  using namespace std;
+  int main() {
+      int year;
+      cout << "Enter the year: ";
+      cin >> year;
+      if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+          cout << "Yes";
+      else
+          cout << "No";
+      return 0;
+  }
+4.)#include <iostream>
+  using namespace std;
+  int main() {
+      int length, breadth;
+      cout << "Enter length and breadth: ";
+      cin >> length >> breadth;
+      int area = length * breadth;
+      int perimeter = 2 * (length + breadth);
+      if (area > perimeter)
+          cout << "Area is greater than perimeter.";
+      else
+          cout << "Perimeter is greater than area.";
+      return 0;
+  }
+5.)#include <iostream>
+  using namespace std;
+  int main() {
+      int a, b, c;
+      cout << "Enter three sides: ";
+      cin >> a >> b >> c;
+      if (a == b && b == c)
+          cout << "This is an Equilateral triangle.";
+      else if (a == b || b == c || a == c)
+          cout << "This is an Isosceles triangle.";
+      else
+          cout << "This is a Scalene triangle.";
+      return 0;
+  }
+6.)#include <iostream>
+  using namespace std;
+  int main() {
+      int A, B, C;
+      cout << "Enter marks of A, B, and C: ";
+      cin >> A >> B >> C;
+      if (A < B && A < C)
+          cout << "'A' has the least marks.";
+      else if (B < A && B < C)
+          cout << "'B' has the least marks.";
+      else
+          cout << "'C' has the least marks.";
+      return 0;
+  }
+7.)#include <iostream>
+using namespace std;
+int main() {
+    int x, y;
+    cout << "Enter coordinates (x y): ";
+    cin >> x >> y;
+    if (x == 0 && y == 0)
+        cout << "The point is at the origin.";
+    else if (x == 0)
+        cout << "The point lies on the y-axis.";
+    else if (y == 0)
+        cout << "The point lies on the x-axis.";
+    else
+        cout << "The point lies in a quadrant.";
+    return 0;
+}
+8.)#include <iostream>
+using namespace std;
+int main() {
+    int x1, y1, x2, y2, x3, y3;
+    cout << "Enter three points (x1 y1 x2 y2 x3 y3): ";
+    cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
+    if ((y2 - y1) * (x3 - x2) == (y3 - y2) * (x2 - x1))
+        cout << "All 3 points lie on the same line.";
+    else
+        cout << "Points do not lie on the same line.";
+    return 0;
+}
+9.)#include <iostream>
+using namespace std;
+int main() {
+    char ch;
+    cout << "Enter a character: ";
+    cin >> ch;
+    if (isalpha(ch))
+        cout << "Alphabet";
+    else if (isdigit(ch))
+        cout << "Digit";
+    else
+        cout << "Special character";
+    return 0;
+}
+10.)Value of b and c are respectively 300 and 200
+
+
+
+
