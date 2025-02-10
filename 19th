@@ -1,0 +1,5 @@
+1)O(n * sqrt(n))
+2)O(n * log n)
+3)O(n * log n)
+4)O(n)
+5)O(n log n)
