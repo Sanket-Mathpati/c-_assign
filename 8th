@@ -1,0 +1,82 @@
+1.)#include <iostream>
+using namespace std;
+
+void printSquares(int n) {
+    for (int i = 1; i <= n; i++) {
+        cout << i * i << " ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int n;
+    cout << "Enter n: ";
+    cin >> n;
+    printSquares(n);
+    return 0;
+}
+
+2.)#include <iostream>
+using namespace std;
+
+double circleArea(double radius) {
+    return 3.14159 * radius * radius;
+}
+
+int main() {
+    double r;
+    cout << "Enter radius: ";
+    cin >> r;
+    cout << "Area of circle: " << circleArea(r) << endl;
+    return 0;
+}
+
+3.)#include <iostream>
+using namespace std;
+
+void printOddNumbers(int a, int b) {
+    for (int i = a; i <= b; i++) {
+        if (i % 2 != 0) {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+}
+
+int main() {
+    int a, b;
+    cout << "Enter two numbers: ";
+    cin >> a >> b;
+    printOddNumbers(a, b);
+    return 0;
+}
+
+4.)#include <iostream>
+using namespace std;
+
+int countDigits(int num) {
+    int count = 0;
+    while (num > 0) {
+        count++;
+        num /= 10;
+    }
+    return count;
+}
+
+void printSquare(int num) {
+    int digits = countDigits(num);
+    cout << "Number of digits: " << digits << endl;
+    cout << "Square: " << num * num << endl;
+}
+
+int main() {
+    int num;
+    cout << "Enter a number: ";
+    cin >> num;
+    printSquare(num);
+    return 0;
+}
+
+5.)Every C++ program must have at least one function, which is main(). Hence, the correct answer is 1.
+6.)true , false
+7.)Yes, this is possible through function overloading. In C++, multiple functions can have the same name as long as they have different parameters (either in number, type, or both).
