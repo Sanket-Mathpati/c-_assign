@@ -1,0 +1,111 @@
+1)#include <iostream>
+using namespace std;
+
+int productOfArray(int arr[], int size) {
+    int product = 1;
+    for (int i = 0; i < size; i++) {
+        product *= arr[i];
+    }
+    return product;
+}
+
+int main() {
+    int arr[] = {2, 3, 4, 5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout << "Product of all elements: " << productOfArray(arr, size) << endl;
+    return 0;
+}
+
+2)#include <iostream>
+#include <climits>
+using namespace std;
+
+int findSecondLargest(int arr[], int size) {
+    int largest = INT_MIN, secondLargest = INT_MIN;
+    
+    for (int i = 0; i < size; i++) {
+        if (arr[i] > largest) {
+            secondLargest = largest;
+            largest = arr[i];
+        } else if (arr[i] > secondLargest && arr[i] != largest) {
+            secondLargest = arr[i];
+        }
+    }
+    return (secondLargest == INT_MIN) ? -1 : secondLargest; // -1 if no second largest exists
+}
+
+int main() {
+    int arr[] = {10, 20, 4, 45, 99, 99, 34};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout << "Second largest element: " << findSecondLargest(arr, size) << endl;
+    return 0;
+}
+
+3)#include <iostream>
+#include <climits>
+using namespace std;
+
+int findMin(int arr[], int size) {
+    int minVal = INT_MAX;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] < minVal) {
+            minVal = arr[i];
+        }
+    }
+    return minVal;
+}
+
+int main() {
+    int arr[] = {7, 2, 5, 10, 1};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout << "Minimum value in the array: " << findMin(arr, size) << endl;
+    return 0;
+}
+
+4)#include <iostream>
+#include <unordered_set>
+using namespace std;
+
+bool hasDuplicates(int arr[], int size) {
+    unordered_set<int> seen;
+    for (int i = 0; i < size; i++) {
+        if (seen.find(arr[i]) != seen.end()) {
+            return true; // Duplicate found
+        }
+        seen.insert(arr[i]);
+    }
+    return false; // No duplicates
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 2}; // Has duplicates
+    int size = sizeof(arr) / sizeof(arr[0]);
+    
+    if (hasDuplicates(arr, size))
+        cout << "Array contains duplicates." << endl;
+    else
+        cout << "Array does not contain duplicates." << endl;
+
+    return 0;
+}
+
+5)#include <iostream>
+using namespace std;
+
+int findSmallestMissingPositive(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        if (arr[i] != i + 1) {
+            return i + 1;
+        }
+    }
+    return size + 1; // If no missing element, return next integer
+}
+
+int main() {
+    int arr[] = {1, 2, 3, 5, 6};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    cout << "Smallest missing positive number: " << findSmallestMissingPositive(arr, size) << endl;
+    return 0;
+}
+6)Undefined behavior (likely 49 if there's no crash)
+Fix: Remove the semicolon ; after the for loop.
