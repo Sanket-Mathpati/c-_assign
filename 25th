@@ -1,0 +1,81 @@
+1)#include <iostream>
+using namespace std;
+
+void printSequence(int n) {
+    // Base case: when n reaches 0, do nothing
+    if (n == 0) return;
+    
+    // Print the current number
+    cout << n << " ";
+    
+    // Recursive call to print the increasing part
+    printSequence(n - 1);
+    
+    // Print the decreasing part after the recursion unwinds
+    cout << n << " ";
+}
+
+int main() {
+    int n = 5;
+    printSequence(n);  // Call the function with n = 5
+    return 0;
+}
+
+2)#include <iostream>
+using namespace std;
+
+int sumOdd(int a, int b) {
+    // Base case: when a exceeds b, return 0 (end of recursion)
+    if (a > b) return 0;
+    
+    // If a is odd, include it in the sum, else skip it
+    if (a % 2 != 0) {
+        return a + sumOdd(a + 1, b);
+    } else {
+        return sumOdd(a + 1, b);
+    }
+}
+
+int main() {
+    int a = 1, b = 10;
+    cout << "Sum of odd numbers from " << a << " to " << b << " is: " << sumOdd(a, b) << endl;
+    return 0;
+}
+
+3)#include <iostream>
+using namespace std;
+
+bool isPowerOfTwo(int n) {
+    // Base case: if n is 1, it's a power of 2
+    if (n == 1) return true;
+    
+    // If n is less than 1 or not divisible by 2, it's not a power of 2
+    if (n < 1 || n % 2 != 0) return false;
+    
+    // Recur with n / 2
+    return isPowerOfTwo(n / 2);
+}
+
+int main() {
+    int n = 16;
+    cout << "Is " << n << " a power of 2? " << (isPowerOfTwo(n) ? "Yes" : "No") << endl;
+    return 0;
+}
+
+4)#include <iostream>
+using namespace std;
+
+int countWays(int n) {
+    // Base cases: 
+    if (n == 0) return 1;  // There's 1 way to stay at the ground (0 stairs).
+    if (n < 0) return 0;   // If n is negative, no way to climb.
+    
+    // Recursive call for the 3 possibilities: taking 1, 2, or 3 steps at a time
+    return countWays(n - 1) + countWays(n - 2) + countWays(n - 3);
+}
+
+int main() {
+    int n = 4;
+    cout << "Number of ways to climb " << n << " stairs: " << countWays(n) << endl;
+    return 0;
+}
