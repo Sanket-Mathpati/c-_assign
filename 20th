@@ -1,0 +1,19 @@
+1)True,false,true,true
+2)[1, 2, 5, 4, 3, 6]
+3)When the array is nearly sorted.
+4)void bubbleSortDescending(int arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] < arr[j+1]) {
+                // Swap if the element is smaller than the next element
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
+        }
+    }
+}
+
+5)Traverse the array and check if the elements are out of order.
+Count the number of out-of-order elements.
+If the count is 0 or 1, the array is "almost sorted."
