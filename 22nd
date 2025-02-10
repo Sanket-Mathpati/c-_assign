@@ -1,0 +1,50 @@
+1)a) It needs O(1) or O(logn) memory to create auxiliary locations
+2)Small values need to be sorted with large keys
+3)#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+// Partition function for QuickSelect
+int partition(vector<int>& arr, int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+    
+    for (int j = low; j < high; j++) {
+        if (arr[j] <= pivot) {
+            i++;
+            swap(arr[i], arr[j]);
+        }
+    }
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
+
+// QuickSelect function
+int quickSelect(vector<int>& arr, int low, int high, int k) {
+    if (low <= high) {
+        int pivotIndex = partition(arr, low, high);
+        
+        if (pivotIndex == k)
+            return arr[pivotIndex];
+        else if (pivotIndex < k)
+            return quickSelect(arr, pivotIndex + 1, high, k);
+        else
+            return quickSelect(arr, low, pivotIndex - 1, k);
+    }
+    return -1;
+}
+
+int main() {
+    vector<int> arr = {12, 3, 5, 7, 19, 2};
+    int k = 4;
+    cout << "The " << k << "th smallest element is: " << quickSelect(arr, 0, arr.size() - 1, k - 1) << endl;
+    return 0;
+}
+
+4)Count the frequency of each element.
+Set each element that occurs most frequently to 0.
+Repeat until the array is sorted.
+5)Try to find the midpoint of the array, and check if replacing the elements with |ai - K| (where K is a potential midpoint) results in a sorted array.
+If no such value for K results in a sorted array, return -1.
