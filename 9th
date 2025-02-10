@@ -1,0 +1,26 @@
+1)#include <iostream>
+using namespace std;
+
+int main() {
+    int num1, num2, product;
+    int *ptr1, *ptr2;
+
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+
+    ptr1 = &num1;
+    ptr2 = &num2;
+
+    product = (*ptr1) * (*ptr2);
+
+    cout << "Product: " << product << endl;
+    return 0;
+}
+
+2)"p is a pointer and q is an integer.
+
+3)11 10 11
+4)a = 20
+  b = 20
+5)int *ptr; declares a pointer, but it is uninitialized (it does not point to any valid memory address).
+*ptr = 5; tries to dereference an uninitialized pointer, which leads to undefined behavior (likely a crash or segmentation fault).
